@@ -1,0 +1,22 @@
+//aan postbid zelf is dis toegevoegd
+
+    var iframe_parent_div = window.frameElement ? window.frameElement.parentNode : null;
+    var parent_iframe = iframe_parent_div.getElementsByTagName('iframe')[0];
+    parent_iframe.width = iframe.width;
+    parent_iframe.height = iframe.height;
+
+//aan DFP passback toegevoegd
+function resizeIframe1(o) {
+        if(o.contentWindow.document.body.scrollWidth) {
+            o.height = o.contentWindow.document.body.scrollHeight;
+            o.width = o.contentWindow.document.body.scrollWidth;
+        } else {
+            o.height = o.contentDocument.documentElement.scrollHeight;
+            o.width = o.contentDocument.documentElement.scrollWidth;
+        }
+    }
+window.onload = function() {
+    resizeIframe1(parent.document.getElementById(this.frameElement.attributes.id.value));
+    resizeIframe1(parent.parent.document.getElementsByTagName('iframe')[0]);
+};
+                        
