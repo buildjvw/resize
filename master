@@ -5,7 +5,7 @@
     parent_iframe.width = iframe.width;
     parent_iframe.height = iframe.height;
 
-//aan DFP passback toegevoegd
+//aan passback toegevoegd
 function resizeIframe1(o) {
         if(o.contentWindow.document.body.scrollWidth) {
             o.height = o.contentWindow.document.body.scrollHeight;
